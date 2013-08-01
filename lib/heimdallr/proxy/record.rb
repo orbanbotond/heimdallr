@@ -75,7 +75,7 @@ module Heimdallr
     # @raise [Heimdallr::PermissionError]
     def update_attributes(attributes, options={})
       try_transaction do
-        @record.assign_attributes(attributes, options)
+        @record.assign_attributes(attributes)
         save
       end
     end
@@ -86,7 +86,7 @@ module Heimdallr
     # @raise [Heimdallr::PermissionError]
     def update_attributes!(attributes, options={})
       try_transaction do
-        @record.assign_attributes(attributes, options)
+        @record.assign_attributes(attributes)
         save!
       end
     end
